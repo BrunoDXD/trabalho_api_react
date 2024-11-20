@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
+import { View, Button, StyleSheet, Text, TextInput } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 type RootStackParamList = {
@@ -19,6 +19,16 @@ type Props = {
 export default function HomeScreen({ navigation }: Props) {
   return (
     <View style={styles.container}>
+      <Text>E-mail</Text>
+        <TextInput
+        style={styles.input}
+        keyboardType='email-address'
+        />
+        <Text>Senha</Text>
+        <TextInput
+        style={styles.input}
+        secureTextEntry
+        />
       <Button
         title="Entrar"
         onPress={() => navigation.navigate('Details')}
@@ -49,6 +59,8 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '50%',
     borderRadius: 5,
+    alignItems: 'center',
+    
   },
   cepContainer: {
     height: 40,
